@@ -32,7 +32,7 @@ listen 443;
 ```
 
 Here all requests are sent to the upstream which are the WSO2 nodes.
-
+``` sudo vim /etc/nginx/sites-available/wso2.conf ```
 The TLS certificate and private key must be located on Nginx.
 ```bash
 sudo mkdir -p /etc/nginx/ssl
