@@ -76,3 +76,4 @@ sudo chmod 644 /etc/nginx/sites-available/wso2.conf
 sudo chown root:root /etc/nginx/conf.d/wso2.conf
 sudo chmod 644 /etc/nginx/conf.d/wso2.conf
 ```
+psql -h <ip> -U psgresql_user -d sharedd_db
