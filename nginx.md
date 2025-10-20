@@ -13,7 +13,7 @@ upstream sslgw.am.wso2.com {       # Gateway (8243)
 # ---------- UI: carbon / admin / publisher / devportal ----------
 server {
     listen 443 ssl;
-    server_name ptnapim.csdiran.ir;
+    server_name ptnapim.example.ir;
     http2 on;
 
     ssl_certificate     /etc/nginx/ssl/wso2-fullchain.crt;
@@ -64,7 +64,7 @@ server {
 # ---------- Gateway (8243) ----------
 server {
     listen 443 ssl;
-    server_name api.ptnapim.csdiran.ir;
+    server_name api.ptnapim.example.ir;
     http2 on;
 
     ssl_certificate     /etc/nginx/ssl/wso2-fullchain.crt;
@@ -97,12 +97,12 @@ server {
 # ---------- HTTP → HTTPS ----------
 server {
     listen 80;
-    server_name ptnapim.csdiran.ir;
+    server_name ptnapim.example.ir;
     return 301 https://$host$request_uri;
 }
 server {
     listen 80;
-    server_name api.ptnapim.csdiran.ir;
+    server_name api.ptnapim.example.ir;
     return 301 https://$host$request_uri;
 }
 
@@ -115,6 +115,6 @@ server {
     ssl_certificate     /etc/nginx/ssl/wso2-fullchain.crt;
     ssl_certificate_key /etc/nginx/ssl/wso2.key;
 
-    return 301 https://ptnapim.csdiran.ir$request_uri;
+    return 301 https://ptnapim.example.ir$request_uri;
 }
 ```
