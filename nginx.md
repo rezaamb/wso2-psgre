@@ -1,4 +1,3 @@
-# ---------- Upstreams (WSO2 Backend listeners) ----------
 upstream sslapi.am.wso2.com {      # Carbon / UI (9443)
     server 127.0.0.1:9443;
     keepalive 32;
@@ -9,7 +8,6 @@ upstream sslgw.am.wso2.com {       # Gateway (8243)
     keepalive 32;
 }
 
-# ---------- UI: carbon / admin / publisher / devportal ----------
 server {
     listen 443 ssl;
     server_name ptnapim.example.ir;
@@ -33,7 +31,6 @@ server {
     proxy_read_timeout  300;
     proxy_send_timeout  300;
     client_max_body_size 50m;
-    # --- OAuth/OIDC & Auth endpoints ---
     location /oauth2/                 { proxy_pass https://sslapi.am.wso2.com$request_uri; }
     location /oidc/                   { proxy_pass https://sslapi.am.wso2.com$request_uri; }
     location /authenticationendpoint/ { proxy_pass https://sslapi.am.wso2.com$request_uri; }
