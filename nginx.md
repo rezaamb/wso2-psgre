@@ -1,3 +1,4 @@
+```bash
 upstream sslapi.am.wso2.com {      # Carbon / UI (9443)
     server 127.0.0.1:9443;
     keepalive 32;
@@ -112,3 +113,4 @@ server {
 
     return 301 https://ptnapim.csdiran.ir$request_uri;
 }
+```
